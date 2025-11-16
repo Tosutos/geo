@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= character.name %>와 추리 대화</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="chat-body">
+    <header class="chat-header" style="--accent:<%= character.accentColor %>;">
+      <a class="back-link" href="/">← 캐릭터 선택으로 돌아가기</a>
+      <div>
+        <p class="chat-label">비밀을 간직한 친구</p>
+        <h1><%= character.name %>와 대화하기</h1>
+        <p><%= character.greeting %></p>
+      </div>
+    </header>
+    <main class="chat-shell">
+      <aside class="character-panel">
+        <h2>궁금해볼 단서</h2>
+        <p class="panel-hint">질문을 던져서 직접 단서를 찾아보세요!</p>
+        <h3>추천 질문</h3>
+        <div class="suggestion-list" id="suggestions"></div>
+      </aside>
+      <section class="chat-window">
+        <div id="chat-log" class="chat-log">
+          <div class="bubble bubble-assistant highlight">
+            안녕! 나는 <%= character.name %>야. 아직 어디 사는지 말할 수는 없지만,
+            질문을 잘하면 금방 알아맞힐 수 있을 거야!
+          </div>
+        </div>
+        <form id="chat-form" class="chat-form">
+          <input
+            id="chat-input"
+            name="message"
+            type="text"
+            placeholder="단서를 얻기 위한 질문을 적어보세요"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">전송</button>
+        </form>
+      </section>
+    </main>
+    <section class="note-section">
+      <div class="note-card">
+        <h3>나만의 단서 노트</h3>
+        <textarea class="note-area" aria-label="단서 메모 공간"></textarea>
+      </div>
+    </section>
+    <script>
+      window.__CHARACTER__ = {
+        id: '<%= characterId %>',
+        starterQuestions: <%- JSON.stringify(character.starterQuestions) %>,
+      };
+    </script>
+    <script src="/chat.js"></script>
+  </body>
+</html>

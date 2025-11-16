@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도치와 시치의 비밀 마을</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="landing">
+    <header class="hero">
+      <div class="hero-logo">
+        <span>?</span>
+        <span>!</span>
+      </div>
+      <div>
+        <p class="tag">추리형 사회 학습</p>
+        <h1>도치와 시치의 비밀 마을</h1>
+        <p>두 친구는 서로 다른 지역에 살지만 어디인지는 비밀! 질문으로 단서를 모아 맞춰보세요.</p>
+      </div>
+    </header>
+    <section class="info-banner">
+      <article>
+        <h3>단서 찾기</h3>
+        <p>인구, 일자리, 주거, 여가, 교통 단서로 지역을 추리해요.</p>
+      </article>
+      <article>
+        <h3>질문하기</h3>
+        <p>추천 질문을 참고해 캐릭터에게 궁금한 점을 물어봐요.</p>
+      </article>
+      <article>
+        <h3>비교하기</h3>
+        <p>두 친구의 답을 비교해 도시와 촌락의 차이를 정리해 봐요.</p>
+      </article>
+    </section>
+    <main class="character-grid">
+      <% Object.values(characters).forEach((character) => { %>
+      <section class="character-card" style="--accent:<%= character.accentColor %>;">
+        <div class="character-avatar"><span><%= character.name %></span></div>
+        <h2><%= character.name %></h2>
+        <p class="character-region">사는 곳은 비밀!</p>
+        <p class="character-description"><%= character.description %></p>
+        <ul class="question-list">
+          <li>인구는 어때?</li>
+          <li>일자리는 어때?</li>
+          <li>주거지의 모습은 어때?</li>
+          <li>여가 시간에는 무엇을 해?</li>
+          <li>이동할 때 어떤 것을 이용해?</li>
+        </ul>
+        <a class="cta-button" href="/chat?character=<%= character.id %>"><%= character.name %>와 추리 시작</a>
+      </section>
+      <% }) %>
+    </main>
+  </body>
+</html>
