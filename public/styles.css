@@ -122,22 +122,6 @@ a {
   box-shadow: 0 12px 25px rgba(149, 213, 192, 0.4);
 }
 
-.question-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0;
-  display: grid;
-  gap: 0.35rem;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-.question-list li {
-  background: rgba(0, 0, 0, 0.04);
-  border-radius: 0.85rem;
-  padding: 0.4rem 0.75rem;
-}
-
 .chat-body {
   background: radial-gradient(circle at 20% 20%, #fef3f1, transparent 45%),
     radial-gradient(circle at 80% 10%, #e3f8ff, transparent 35%), #fdfcf8;

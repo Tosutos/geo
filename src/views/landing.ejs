@@ -39,13 +39,6 @@
         <h2><%= character.name %></h2>
         <p class="character-region">사는 곳은 비밀!</p>
         <p class="character-description"><%= character.description %></p>
-        <ul class="question-list">
-          <li>인구는 어때?</li>
-          <li>일자리는 어때?</li>
-          <li>주거지의 모습은 어때?</li>
-          <li>여가 시간에는 무엇을 해?</li>
-          <li>이동할 때 어떤 것을 이용해?</li>
-        </ul>
         <a class="cta-button" href="/chat?character=<%= character.id %>"><%= character.name %>와 추리 시작</a>
       </section>
       <% }) %>
